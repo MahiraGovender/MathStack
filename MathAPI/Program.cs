@@ -6,7 +6,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Secrets
+//Secrets
 
 var connectionString = builder.Configuration["Math_DB"];
 var jwtKey = builder.Configuration["MathAppJwtKey"];
@@ -19,9 +19,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<MathDbContext>(options =>
-                options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString));
 
-
+var key = Encoding.ASCII.GetBytes(jwtKey);
 
 builder.Services.AddAuthentication(options =>
 {
@@ -39,6 +39,7 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false
     };
 });
+
 
 var app = builder.Build();
 
