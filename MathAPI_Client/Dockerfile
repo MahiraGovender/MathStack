@@ -14,10 +14,10 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 COPY . .
-RUN dotnet restore "./MathAPIClient.csproj"
-RUN dotnet publish "./MathAPIClient.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet restore "./MathAPI_Client.csproj"
+RUN dotnet publish "./MathAPI_Client.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/publish .
-ENTRYPOINT ["dotnet", "MathAPIClient.dll"]
+ENTRYPOINT ["dotnet", "MathAPI_Client.dll"]
