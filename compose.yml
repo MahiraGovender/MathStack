@@ -26,14 +26,14 @@ services:
       - ./db/init.sql:/init.sql
     entrypoint: >
       /bin/bash -c "
-      /opt/mssql-tools/bin/sqlcmd -S math-db -U sa -P ${SA_PASSWORD} -Q 'SELECT 1' ;
+      /opt/mssql-tools/bin/sqlcmd -S math-db -U sa -P "${SA_PASSWORD}" -Q 'SELECT 1' ;
       until [ $$? -eq 0 ]; do
         echo 'Waiting for SQL Server...';
         sleep 2;
-        /opt/mssql-tools/bin/sqlcmd -S math-db -U sa -P ${SA_PASSWORD} -Q 'SELECT 1' ;
+        /opt/mssql-tools/bin/sqlcmd -S math-db -U sa -P "${SA_PASSWORD}" -Q 'SELECT 1' ;
       done;
       echo 'Running init.sql...';
-      /opt/mssql-tools/bin/sqlcmd -S math-db -U sa -P ${SA_PASSWORD} -i /init.sql;
+      /opt/mssql-tools/bin/sqlcmd -S math-db -U sa -P "${SA_PASSWORD}" -i /init.sql;
       echo 'Database initialized';
       "
     restart: "no"
@@ -50,7 +50,7 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       FirebaseMathApp: "${FirebaseMathApp}"
       MathAppJwtKey: "${MathAppJwtKey}"
-      Math_DB: "Server=math-db,1433;Database=MathDB;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;"
+      Math_DB: "Server=math-db,1433;Database=Math_DB;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;"
     ports:
       - "8081:8080"
 
