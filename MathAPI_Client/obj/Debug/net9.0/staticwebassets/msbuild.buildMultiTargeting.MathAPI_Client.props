@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MathAPI_Client.props" />
+</Project>
