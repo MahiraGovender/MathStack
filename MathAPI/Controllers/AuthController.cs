@@ -35,9 +35,9 @@ namespace MathAPI.Controllers
         {
             try
             {
-                await auth.CreateUserWithEmailAndPasswordAsync(login.Email, login.Password);
+                await _auth.CreateUserWithEmailAndPasswordAsync(login.Email, login.Password);
 
-                var fbAuthLink = await auth.SignInWithEmailAndPasswordAsync(login.Email, login.Password);
+                var fbAuthLink = await _auth.SignInWithEmailAndPasswordAsync(login.Email, login.Password);
                 string currentUserId = fbAuthLink.User.LocalId;
                 string currentUserEmail = fbAuthLink.User.Email;
 
@@ -56,7 +56,7 @@ namespace MathAPI.Controllers
                     {
                         Subject = new ClaimsIdentity(claims),
                         Expires = DateTime.UtcNow.AddDays(1),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(_key), SecurityAlgorithms.HmacSha256Signature)
                     };
 
                     var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -74,7 +74,7 @@ namespace MathAPI.Controllers
             {
                 return Unauthorized(ex.Message);
             }
-            return View();
+            return BadRequest("Registration failed");
 
         }
 
@@ -83,7 +83,7 @@ namespace MathAPI.Controllers
         {
             try
             {
-                var fbAuthLink = await auth.SignInWithEmailAndPasswordAsync(login.Email, login.Password);
+                var fbAuthLink = await _auth.SignInWithEmailAndPasswordAsync(login.Email, login.Password);
                 string currentUserId = fbAuthLink.User.LocalId;
                  string currentUserEmail = fbAuthLink.User.Email;
 
@@ -102,7 +102,7 @@ namespace MathAPI.Controllers
                     {
                         Subject = new ClaimsIdentity(claims),
                         Expires = DateTime.UtcNow.AddDays(1),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(_key), SecurityAlgorithms.HmacSha256Signature)
                     };
 
                     var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -124,7 +124,7 @@ namespace MathAPI.Controllers
                 return Unauthorized(ex.Message);
             }
 
-            return View();
+            return BadRequest("Login failed");
         }
 
         [HttpPost("Logout")]
