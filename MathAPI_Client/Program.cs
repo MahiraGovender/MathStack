@@ -1,6 +1,23 @@
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.DataProtection;
 using MathAPI_Client.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.Configure<ApiSettings>(
+    builder.Configuration.GetSection("ApiSettings"));
+
+builder.Services.AddHttpClient("MathAPI", (sp, client) =>
+{
+    var options = sp.GetRequiredService<IOptions<ApiSettings>>().Value;
+    client.BaseAddress = new Uri(options.BaseUrl);
+});
+
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddSession(options =>
 {
@@ -9,9 +26,9 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new DirectoryInfo("/keys"))
+    .SetApplicationName("MathAPIClient");
 
 var app = builder.Build();
 
@@ -19,18 +36,17 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseSession();
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+
 app.UseRouting();
 
 app.UseAuthorization();
-
-app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
@@ -39,3 +55,8 @@ app.MapControllerRoute(
 
 
 app.Run();
+
+public class ApiSettings
+{
+    public string BaseUrl { get; set; } = string.Empty;
+}
