@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R/9eBp/wV4M=",
+  "dgSpecHash": "hYqwHGN0gHY=",
   "success": true,
-  "projectFilePath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI_Client\\MathAPI_Client.csproj",
+  "projectFilePath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI_Client\\MathAPI_Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaioc\\.nuget\\packages\\firebase.auth\\1.0.0\\firebase.auth.1.0.0.nupkg.sha512",
     "C:\\Users\\kaioc\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

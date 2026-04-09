@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lQplzA4lKrw=",
+  "dgSpecHash": "O2evNNFaFuE=",
   "success": true,
-  "projectFilePath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI\\MathAPI.csproj",
+  "projectFilePath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI\\MathAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaioc\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\kaioc\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -6,16 +6,22 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Secrets
+
+var connectionString = builder.Configuration["Math_DB"];
+var jwtKey = builder.Configuration["MathAppJwtKey"];
+var firebaseApiKey = builder.Configuration["FirebaseMathApp"];
+
 // Add services to the container.
 
 builder.Services.AddControllers();
-
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connection = Environment.GetEnvironmentVariable("MathAPIApp");
+builder.Services.AddDbContext<MathDbContext>(options =>
+                options.UseSqlServer(connectionString));
 
 
-var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("MathAppJwtKey"));
 
 builder.Services.AddAuthentication(options =>
 {
@@ -34,27 +40,14 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddDbContext<MathDbContext>(options =>
-                options.UseSqlServer(connection));
-
-builder.Services.AddOpenApi();
-
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger(); // Add this
-    app.UseSwaggerUI(); // Add this
-}
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

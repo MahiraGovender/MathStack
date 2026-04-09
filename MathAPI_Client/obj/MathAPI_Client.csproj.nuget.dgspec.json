@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI_Client\\MathAPI_Client.csproj": {}
+    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI_Client\\MathAPI_Client.csproj": {}
   },
   "projects": {
-    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI_Client\\MathAPI_Client.csproj": {
+    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI_Client\\MathAPI_Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI_Client\\MathAPI_Client.csproj",
+        "projectUniqueName": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI_Client\\MathAPI_Client.csproj",
         "projectName": "MathAPI_Client",
-        "projectPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI_Client\\MathAPI_Client.csproj",
+        "projectPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI_Client\\MathAPI_Client.csproj",
         "packagesPath": "C:\\Users\\kaioc\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI_Client\\obj\\",
+        "outputPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI_Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

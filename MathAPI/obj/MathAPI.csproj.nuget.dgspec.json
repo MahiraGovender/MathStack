@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI\\MathAPI.csproj": {}
+    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI\\MathAPI.csproj": {}
   },
   "projects": {
-    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI\\MathAPI.csproj": {
+    "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI\\MathAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI\\MathAPI.csproj",
+        "projectUniqueName": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI\\MathAPI.csproj",
         "projectName": "MathAPI",
-        "projectPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI\\MathAPI.csproj",
+        "projectPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI\\MathAPI.csproj",
         "packagesPath": "C:\\Users\\kaioc\\.nuget\\packages\\",
-        "outputPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathAPI\\obj\\",
+        "outputPath": "D:\\Uni\\Year_3\\source\\PROG_3A\\MathStack\\MathAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
