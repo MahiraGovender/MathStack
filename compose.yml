@@ -56,7 +56,7 @@ services:
 
   math-client:
     build:
-      context: ./MathAPIClient
+      context: ./MathAPI_Client
       dockerfile: Dockerfile
     container_name: math-client
     depends_on:
