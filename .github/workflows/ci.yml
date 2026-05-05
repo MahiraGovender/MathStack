@@ -133,6 +133,18 @@ jobs:
           docker logs math-client || true
           exit 1
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+            node-version: 22
+            cache: npm
+
+      - name: Install Newman
+        run: npm ci
+
+      - name: Run Newman API tests
+        run: npm run test:api -- --env-var baseUrl=http://localhost:8081
+
       - name: Show logs if failure
         if: failure()
         run: |
