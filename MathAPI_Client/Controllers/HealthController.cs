@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MathAPIClient.Controllers
+namespace MathAPI_Client.Controllers
 {
     public class HealthController : Controller
     {

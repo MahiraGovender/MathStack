@@ -52,8 +52,8 @@ jobs:
       - name: Build and push Client
         uses: docker/build-push-action@v6
         with:
-          context: ./MathAPIClient
-          file: ./MathAPIClient/Dockerfile
+          context: ./MathAPI_Client
+          file: ./MathAPI_Client/Dockerfile
           push: true
           tags: ghcr.io/${{ steps.vars.outputs.owner_lc }}/mathstack-client:latest
 
