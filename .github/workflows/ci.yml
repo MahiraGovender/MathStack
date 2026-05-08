@@ -112,6 +112,7 @@ jobs:
             echo "Waiting for database..."
             sleep 5
           done
+          echo "Database did not become ready"
           docker logs math-db || true
           exit 1
 
@@ -125,6 +126,7 @@ jobs:
             echo "Waiting for API..."
             sleep 5
           done
+          echo "API did not respond"
           docker logs math-api || true
           exit 1
 
@@ -138,6 +140,7 @@ jobs:
             echo "Waiting for client..."
             sleep 5
           done
+          echo "Client did not respond"
           docker logs math-client || true
           exit 1
 
