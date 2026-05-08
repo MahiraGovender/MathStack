@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "test:api": "newman run postman/mathstack-api.postman_collection.json -e postman/mathstack-ci.postman_environment.json"
+    "test:api": "newman run tests/newman/mathstack-api.postman_collection.json -e tests/newman/mathstack-ci.postman_environment.json",
+    "test:playwright": "playwright test --config=tests/playwright/playwright.config.js"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "newman": "^6.2.1"
   }
 }
