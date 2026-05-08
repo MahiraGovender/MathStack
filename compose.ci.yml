@@ -17,7 +17,7 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       FirebaseMathApp: "${FirebaseMathApp}"
       MathAppJwtKey: "${MathAppJwtKey}"
-      Math_DB: "Server=math-db,1433;Database=MathDB;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;"
+      Math_DB: "Server=math-db,1433;Database=Math_DB;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;"
     ports:
       - "8081:8080"
 
