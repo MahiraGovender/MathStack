@@ -25,7 +25,7 @@ test('intentional failing test to view Playwright report', async ({ page }) => {
 test('home page loads successfully', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page).toHaveTitle(/Home Page - MathAPIClient/);
+  await expect(page).toHaveTitle(/Home Page - MathAPI_Client/);
   await expect(page.getByRole('heading', { name: 'Welcome' })).toBeVisible();
 });
 
@@ -34,7 +34,7 @@ test('main navigation links are visible before login', async ({ page }) => {
 
   const nav = page.locator('header nav');
 
-  await expect(nav.getByRole('link', { name: 'MathAPIClient' })).toBeVisible();
+  await expect(nav.getByRole('link', { name: 'MathAPI_Client' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'Calculate' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'History' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'Login' })).toBeVisible();
@@ -43,7 +43,7 @@ test('main navigation links are visible before login', async ({ page }) => {
 test('login page loads and links to register', async ({ page }) => {
   await page.goto('/Auth/Login');
 
-  await expect(page).toHaveTitle(/Login - MathAPIClient/);
+  await expect(page).toHaveTitle(/Login - MathAPI_Client/);
   await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
   await expect(page.getByLabel('Email')).toBeVisible();
   await expect(page.getByLabel('Password')).toBeVisible();
@@ -54,7 +54,7 @@ test('login page loads and links to register', async ({ page }) => {
 test('register page loads and links back to login', async ({ page }) => {
   await page.goto('/Auth/Register');
 
-  await expect(page).toHaveTitle(/Register - MathAPIClient/);
+  await expect(page).toHaveTitle(/Register - MathAPI_Client/);
   await expect(page.getByRole('heading', { name: 'Register' })).toBeVisible();
   await expect(page.getByLabel('Email')).toBeVisible();
   await expect(page.getByLabel('Password')).toBeVisible();
@@ -133,7 +133,7 @@ test.describe.serial('authenticated user features', () => {
 
     await page.goto('/Math/History');
 
-    await expect(page).toHaveTitle(/History - MathAPIClient/);
+    await expect(page).toHaveTitle(/History - MathAPI_Client/);
     await expect(page.getByRole('heading', { name: 'History' })).toBeVisible();
 
     const table = page.locator('table');
