@@ -34,6 +34,7 @@ test('main navigation links are visible before login', async ({ page }) => {
 
   const nav = page.locator('header nav');
 
+  await expect(nav.getByRole('link', { name: 'MathAPI_Client' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'Calculate' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'History' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'Login' })).toBeVisible();
